@@ -49,7 +49,7 @@ module rv32_processor (
         .result(pc_add_imm)
     );
 
-    mux_32 mux1 (
+    mux_2_to_1 mux1 (
         .sel(pcSrc),
         .op1(pc_add_4),
         .op2(pc_add_imm),
@@ -95,7 +95,7 @@ module rv32_processor (
     );
 
     // Instantiate modules for alu
-    mux_32 mux2 (
+    mux_2_to_1 mux2 (
         .sel(aluSrc),
         .op1(reg2data),
         .op2(immediate),
@@ -127,7 +127,7 @@ module rv32_processor (
         .resetn(resetn)
     );
 
-    mux_32 mux3 (
+    mux_2_to_1 mux3 (
         .sel(memToReg),
         .op2(memory_data),
         .op1(alu_result),

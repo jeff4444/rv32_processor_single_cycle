@@ -1,3 +1,3 @@
 #!/bin/bash
-iverilog -o sim.vvp tb_alu_ctrl.sv
-vvp sim.vvp
+iverilog -o ./outputs/sim.vvp tb_alu_ctrl.sv
+vvp ./outputs/sim.vvp
