@@ -14,7 +14,9 @@ module registers (
 
     always @(posedge clk) begin
         if (!resetn) begin
-            regFile[0] <= 32'h0;
+            for (integer i = 0; i < 32; i = i + 1) begin
+                regFile[i] <= 0;
+            end
         end else begin
             if (regWrite) begin
                 if (writeReg != 0) begin
